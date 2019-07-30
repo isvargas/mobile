@@ -1,0 +1,43 @@
+/*
+* No app.module.ts, configurar o IonicModule de acordo com o exemplo:
+*/
+
+...
+
+@NgModule({
+  declarations: [
+    MyApp,
+    HomePage,
+    ListPage
+  ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(MyApp, {
+      platforms: {
+        ios: {
+          backButtonText: '',
+          backButtonIcon: 'ios-home'
+        },
+        android: {
+          backButtonText: '',
+          backButtonIcon: 'md-home'
+        }
+      }
+    }),
+    HttpClientModule
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    HomePage,
+    ListPage
+  ],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    HttpClientModule,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},    
+  ]
+})
+
+...
